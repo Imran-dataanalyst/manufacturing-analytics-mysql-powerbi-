@@ -1,7 +1,7 @@
 # Manufacturing_Analytics_Training_Project.( Power BI) 
 An interactive Power BI dashboard that analyzes production output, product quality, material and energy efficiency, batch expiry and supervisor performance across a manufacturing unit. Built to help production and quality teams quickly see which lines, products and supervisors are performing well, and where waste is building up.
 
-> **Project type:** Training project (beginner level) | **Stack:** MySQL → Power BI | **Data:** 50 production batches, Dec 2024 – Jan 2025
+> **Project type:** Training project (beginner level) | **Stack:** CSV → MySQL → Power BI | **Data:** 50 production batches, Dec 2024 – Jan 2025
 
 ## Overview
 Overview
