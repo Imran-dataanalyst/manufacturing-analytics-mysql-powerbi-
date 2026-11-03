@@ -1,13 +1,15 @@
-# Manufacturing Analytics Training Project ( MySQL + Power BI).  
+# Manufacturing Analytics Training Project (MySQL+Power BI).  
 An interactive Power BI dashboard that analyzes production output, product quality, material and energy efficiency, batch expiry and supervisor performance across a manufacturing unit. Built to help production and quality teams quickly see which lines, products and supervisors are performing well, and where waste is building up.
 
 > **Project type:** Training project (beginner level) | **Stack:** CSV → MySQL → Power BI | **Data:** 50 production batches, Dec 2024 – Jan 2025
 
 ## Overview
 The dashboard answers three core questions about the plant:
-**Production & Quality** – How much are we producing, and how much of it is defective?
-**Efficiency & Value** – How much material and energy does each unit cost us, and which products or categories bring in the most value?
-**Batches & People** – Which batches are close to expiry, and which supervisors deliver the best (and worst) quality?
+
+1. **Production & Quality** – How much are we producing, and how much of it is defective?
+2. **Efficiency & Value** – How much material and energy does each unit cost us, and which products or categories bring in the most value?
+3. **Batches & People** – Which batches are close to expiry, and which supervisors deliver the best (and worst) quality?
+
 It is built as six connected pages (Home, Production, Quality, Efficiency, Batch & Expiry, Supervisor Performance) with slicers for date, product, category, production line, shift and supervisor, plus navigation buttons between pages.
 
 ## Dataset
@@ -49,22 +51,28 @@ The full SQL is in `mfg_star_schema.sql`.
 <img width="1050" height="630" alt="image" src="https://github.com/user-attachments/assets/df2a6be6-6c42-47e1-8c4d-1d2db761a087" />
 <img width="1080" height="634" alt="image" src="https://github.com/user-attachments/assets/b7aec754-505c-4d70-97b5-8559bc51588c" />
 
-Key Findings
-**Production & Quality**
-The plant produced **33,100** units with **317** defective, giving a defect rate of **0.96%** and a yield of **99.04**%.
-Line B (Evening shift) has the highest defect rate at **1.70%.** Line A is at **0.84%** and Line C (Night shift) is lowest at **0.44%.**
-Line C produces the most **(13,850 units)**, while Line A produces the least **(8,250 units)**.
-Concrete Block (**1.35%**) and Brass Valve (**1.33%)** have the highest product defect rates. Among categories, Electrical and Metal Products are highest at about 1.14%.
-Packaging is the highest-volume category (**12,800 units)**.
-Defect rate went from 0.91% in December to 1.03% in January, but January only has 19 days of data, so this is not a reliable trend.
-**Efficiency & Value**
-On average the plant uses **0.31 kg** of material and **0.20 kWh** of energy per unit produced.
-Line C uses the most energy per unit **(0.25 kWh)**; Line B uses the least **(0.13 kWh)**.
-Insulation Panel is the most resource-heavy product **(0.50 kg and 0.32 kWh per unit)**. Paper Bag is the lightest (**0.13 kg and 0.10 kWh per unit)**.
-Total gross value (quantity × unit price) is **$721,075**. Construction alone contributes about **$322,875 (45%)**, even though it is not the biggest category by volume.
-**Supervisors**
-Liam Thomas **(3.87%) **and Lucas Anderson **(2.12%)** have the highest defect rates, each across **6** batches.
-Isabella Davis has zero defects across 5 batches, and Mia Wilson has just **0.09%** across 6 batches and **6,850** units, the highest output of any supervisor.
+## Key Findings
+
+### Production & Quality
+
+- The plant produced **33,100** units with **317** defective, giving a defect rate of **0.96%** and a yield of **99.04%**.
+- Line B (Evening shift) has the highest defect rate at **1.70%**. Line A is at **0.84%** and Line C (Night shift) is lowest at **0.44%**.
+- Line C produces the most (**13,850 units**), while Line A produces the least (**8,250 units**).
+- Concrete Block (**1.35%**) and Brass Valve (**1.33%**) have the highest product defect rates. Among categories, Electrical and Metal Products are highest at about 1.14%.
+- Packaging is the highest-volume category (**12,800 units**).
+- Defect rate went from 0.91% in December to 1.03% in January, but January only has 19 days of data, so this is not a reliable trend.
+
+### Efficiency & Value
+
+- On average the plant uses **0.31 kg** of material and **0.20 kWh** of energy per unit produced.
+- Line C uses the most energy per unit (**0.25 kWh**); Line B uses the least (**0.13 kWh**).
+- Insulation Panel is the most resource-heavy product (**0.50 kg and 0.32 kWh per unit**). Paper Bag is the lightest (**0.13 kg and 0.10 kWh per unit**).
+- Total gross value (quantity × unit price) is **$721,075**. Construction alone contributes about **$322,875 (45%)**, even though it is not the biggest category by volume.
+
+### Supervisors
+
+- Liam Thomas (**3.87%**) and Lucas Anderson (**2.12%**) have the highest defect rates, each across **6** batches.
+- Isabella Davis has zero defects across 5 batches, and Mia Wilson has just **0.09%** across 6 batches and **6,850** units, the highest output of any supervisor.
 
 ## Business Recommendations
 These come from what the dashboard shows. Where the data shows a pattern but not the cause, it is flagged as something to investigate, not a conclusion.
@@ -77,13 +85,16 @@ These come from what the dashboard shows. Where the data shows a pattern but not
 7. **Use the Batch & Expiry page to prioritize stock**. Action: review batches marked near-expiry first, and consider shorter-shelf-life products when planning production.
 8. **Collect more data**. 50 batches over 7 weeks is too small to spot real trends. Action: extend to several months and re-check these findings before acting on them.
 
-**Dashboard Pages**
-**Home**	Overall KPIs (total production, yield %, defect rate %, gross value, defective units), production by category, defect and yield trends over time
-**Production Analysis**	Production over time, units by product, production by line and shift
-**Quality Analysis**	Defect rate trend and by product and line, yield by line and shift, good vs defective units
-**Efficiency Analysis**	Material per unit and energy per unit over time and by production line
-**Batch & Expiry**	Batch list with expiry date, days to expiry and expiry status, by product and category
-**Supervisor Performance**	Supervisor ranking, good units, defect rate and yield by supervisor and batch
+## Dashboard Pages
+
+| Page | What it shows |
+|---|---|
+| **Home** | Overall KPIs (total production, yield %, defect rate %, gross value, defective units), production by category, defect and yield trends over time |
+| **Production Analysis** | Production over time, units by product, production by line and shift |
+| **Quality Analysis** | Defect rate trend and by product and line, yield by line and shift, good vs defective units |
+| **Efficiency Analysis** | Material per unit and energy per unit over time and by production line |
+| **Batch & Expiry** | Batch list with expiry date, days to expiry and expiry status, by product and category |
+| **Supervisor Performance** | Supervisor ranking, good units, defect rate and yield by supervisor and batch |
 
 ## Repository Structure
 ```├── manufacturing_analysis - GithuB.pbix                       # Power BI report
