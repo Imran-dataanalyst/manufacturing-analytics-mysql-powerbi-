@@ -1,4 +1,4 @@
-# Manufacturing Analytics Training Project.( My SQL + Power BI) 
+# Manufacturing Analytics Training Project ( MySQL + Power BI).  
 An interactive Power BI dashboard that analyzes production output, product quality, material and energy efficiency, batch expiry and supervisor performance across a manufacturing unit. Built to help production and quality teams quickly see which lines, products and supervisors are performing well, and where waste is building up.
 
 > **Project type:** Training project (beginner level) | **Stack:** CSV → MySQL → Power BI | **Data:** 50 production batches, Dec 2024 – Jan 2025
@@ -86,16 +86,17 @@ These come from what the dashboard shows. Where the data shows a pattern but not
 **Supervisor Performance**	Supervisor ranking, good units, defect rate and yield by supervisor and batch
 
 ## Repository Structure
-```
-├── manufacturing_analysis.pbix
-├── data/Manufacturing_Dataset1_Master_Fixed.csv
-├── docs/Manufacturing_MySQL_PowerBI_Functional_Technical_Document.pdf
-├── images/            # dashboard screenshots
+```├── manufacturing_analysis - GithuB.pbix                       # Power BI report
+├── mfg_star_schema.sql                                           # MySQL star schema
+├── Manufacturing_Dataset1_Master_Fixed.csv                       # source data
+├── Manufacturing_MySQL_PowerBI_Functional_Technical_Document.docx
+├── images/                                                       # dashboard screenshots
 └── README.md
 ```
-## What I Learned
-Designing a star schema (fact and dimension tables) and relationships in Power BI
-Writing DAX measures with `SUM`, `SUMX` and `DIVIDE`
-Writing SQL data-quality checks before loading data
-Building a multi-page report with slicers and navigation
-Turning dashboard numbers into recommendations, and being careful not to overclaim from a small dataset
+```
+**What I Learned**
+1. Designing a star schema (fact and dimension tables) and relationships in Power BI
+2. Writing DAX measures with `SUM`, `SUMX` and `DIVIDE`
+3. Writing SQL data-quality checks before loading data
+4. Building a multi-page report with slicers and navigation
+5. Turning dashboard numbers into recommendations, and being careful not to overclaim from a small dataset
