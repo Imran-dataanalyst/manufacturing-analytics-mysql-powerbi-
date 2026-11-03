@@ -1,4 +1,4 @@
-# Manufacturing Analytics Training Project (MySQL+Power BI).  
+# Manufacturing Analytics Training Project (MySQL+Power BI)  
 An interactive Power BI dashboard that analyzes production output, product quality, material and energy efficiency, batch expiry and supervisor performance across a manufacturing unit. Built to help production and quality teams quickly see which lines, products and supervisors are performing well, and where waste is building up.
 
 > **Project type:** Training project (beginner level) | **Stack:** CSV → MySQL → Power BI | **Data:** 50 production batches, Dec 2024 – Jan 2025
@@ -119,3 +119,4 @@ These come from what the dashboard shows. Where the data shows a pattern but not
 3. Writing SQL data-quality checks before loading data
 4. Building a multi-page report with slicers and navigation
 5. Turning dashboard numbers into recommendations, and being careful not to overclaim from a small dataset
+
