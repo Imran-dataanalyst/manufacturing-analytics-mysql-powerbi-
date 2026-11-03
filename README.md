@@ -13,26 +13,33 @@ The dashboard answers three core questions about the plant:
 It is built as six connected pages (Home, Production, Quality, Efficiency, Batch & Expiry, Supervisor Performance) with slicers for date, product, category, production line, shift and supervisor, plus navigation buttons between pages.
 
 ## Dataset
-The data covers 50 production batches of 15 products in 5 categories (Metal Products, Packaging, Components, Construction, Electrical), made on 3 production lines (A, B, C) across 3 shifts (Morning, Evening, Night), between 1 Dec 2024 and 19 Jan 2025.
-Each record includes:
-Product ID, product name, category and batch number
-Production date and expiry date
-Quantity produced, unit price (USD) and defective units
-Production line, shift and supervisor name
-Material used (kg) and energy consumed (kWh)
-**Note**: This is a training/practice dataset, not real company data. With only 50 batches, small differences between lines, products or supervisors may be random and should not be treated as proven facts.
 
+The data covers 50 production batches of 15 products in 5 categories (Metal Products, Packaging, Components, Construction, Electrical), made on 3 production lines (A, B, C) across 3 shifts (Morning, Evening, Night), between 1 Dec 2024 and 19 Jan 2025.
+
+Each record includes:
+
+- Product ID, product name, category and batch number
+- Production date and expiry date
+- Quantity produced, unit price (USD) and defective units
+- Production line, shift and supervisor name
+- Material used (kg) and energy consumed (kWh)
+
+**Note:** This is a training/practice dataset, not real company data. With only 50 batches, small differences between lines, products or supervisors may be random and should not be treated as proven facts.
 
 ## Tools Used
-MySQL – staging table, data-quality checks and reporting views
-Power BI – data modeling (star schema), DAX measures, dashboard design
-Power Query – data type checks and light cleaning
-CSV – source data
-  
+
+- **MySQL** – staging table, data-quality checks and reporting views
+- **Power BI** – data modeling (star schema), DAX measures, dashboard design
+- **Power Query** – data type checks and light cleaning
+- **CSV** – source data
+
 ## Star Schema
-**Fact table**: `fact_production`
-**Dimension tables**: `dim_batch`, `dim_date`, `dim_line`, `dim_product`, `dim_shift`, `dim_supervisor`
+
+- **Fact table:** `fact_production`
+- **Dimension tables:** `dim_batch`, `dim_date`, `dim_line`, `dim_product`, `dim_shift`, `dim_supervisor`
+
 The full SQL is in `mfg_star_schema.sql`.
+  
 
 ## Steps
 1. Cleaned the CSV files
@@ -43,7 +50,6 @@ The full SQL is in `mfg_star_schema.sql`.
 6. Created relationships, measures, and visuals
 
 ## Dashboard
-![Dashboard Screenshot](images/dashboard.png)
 <img width="1054" height="633" alt="image" src="https://github.com/user-attachments/assets/87e1099f-f8ad-43ff-b6e5-33313df7c763" />
 <img width="1066" height="638" alt="image" src="https://github.com/user-attachments/assets/a9fb813e-a483-47ad-b872-f88d8b65ac49" />
 <img width="1057" height="632" alt="image" src="https://github.com/user-attachments/assets/d1e9e784-8fcf-48ba-8f93-84fb7abf476e" />
@@ -105,7 +111,9 @@ These come from what the dashboard shows. Where the data shows a pattern but not
 └── README.md
 ```
 ```
-**What I Learned**
+
+## What I Learned
+
 1. Designing a star schema (fact and dimension tables) and relationships in Power BI
 2. Writing DAX measures with `SUM`, `SUMX` and `DIVIDE`
 3. Writing SQL data-quality checks before loading data
